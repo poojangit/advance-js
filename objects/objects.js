@@ -54,3 +54,22 @@ const proto= {
 }
 const obj = Object.create(proto)
 console.log(obj);
+
+//~ Adding , modifing and deleting the properties
+
+person.name = "Preethi"
+person.city = "Bengaluru"
+delete person.name
+
+//~ Accessing the property
+
+console.log(person.name);
+console.log(person.city);
+console.log(person['age']);
+
+//~ looping through an Object
+
+for(let n in person){
+    console.log(n, person[n]);
+}
+
