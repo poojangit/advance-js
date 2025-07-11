@@ -40,4 +40,40 @@ console.log(String(user));
 console.log(Number(user));
 console.log(user + " Smith");
 
+//~ Example 3
+
+const obj1 = {
+  valueOf() {
+    return 100;
+  },
+  toString() {
+    return "Should not use this";
+  },
+
+  [Symbol.toPrimitive](hint){
+    return this.toString()
+  }
+};
+
+console.log(obj1 + "Hello"); // 150
+
+//~ Example 4
+
+const data = {
+    name : "Poo"
+}
+console.log("hii" + data);
+
+const data1 = {
+    name : "Poo",
+    age : 25,
+    toValue() {
+        return this.age
+    },
+    toString() {
+        return this.name
+    }
+}
+console.log("hii " + data1);
+
 
